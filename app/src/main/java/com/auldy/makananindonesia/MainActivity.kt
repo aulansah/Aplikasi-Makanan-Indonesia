@@ -5,31 +5,30 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.auldy.makananindonesia.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var rvMakanan: RecyclerView
+    private lateinit var binding: ActivityMainBinding
     private var list: ArrayList<Makanan> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        rvMakanan = findViewById(R.id.activity_makanan)
-        rvMakanan.setHasFixedSize(true)
+        binding.activityMakanan.setHasFixedSize(true)
 
         list.addAll(MakananData.listData)
         showRecyclerList()
 
-        supportActionBar!!.title = "Makanan Indonesia"
+        supportActionBar?.title = "Makanan Indonesia"
     }
 
     private fun showRecyclerList() {
-        rvMakanan.layoutManager = LinearLayoutManager(this)
+        binding.activityMakanan.layoutManager = LinearLayoutManager(this)
         val listMakananAdapter = ListMakananAdapter(list)
-        rvMakanan.adapter = listMakananAdapter
+        binding.activityMakanan.adapter = listMakananAdapter
 
         listMakananAdapter.setOnItemClickCallback(object : ListMakananAdapter.OnItemClickCallback {
             override fun onItemClicked(data: Makanan) {

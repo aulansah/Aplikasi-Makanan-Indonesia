@@ -1,0 +1,134 @@
+[
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/layout_activity_main.xml.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/layout_activity_about.xml.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/layout/activity_about.xml"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/drawable_about.png.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/drawable/about.png"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/layout_item_row_makanan.xml.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/layout/item_row_makanan.xml"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/drawable_rawon.jpg.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/drawable/rawon.jpg"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/drawable_soto.jpg.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/drawable/soto.jpg"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/drawable_auldy.jpg.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/drawable/auldy.jpg"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/drawable_mieayam.jpg.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/drawable/mieayam.jpg"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/drawable-v24_dicoding_icon.png.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/drawable-v24/dicoding_icon.png"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/drawable_bakso.jpg.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/drawable/bakso.jpg"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/drawable_nasigoreng.jpg.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/drawable/nasigoreng.jpg"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/drawable_pecel.jpg.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/drawable/pecel.jpg"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/drawable_pempek.jpg.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/drawable/pempek.jpg"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/drawable_rendang.jpg.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/drawable/rendang.jpg"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/drawable-v24_email_icon.png.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/drawable-v24/email_icon.png"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.auldy.makananindonesia.app-pngs-32:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/menu_menu_about.xml.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/menu/menu_about.xml"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/layout_activity_detail.xml.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/layout/activity_detail.xml"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/drawable_sate.jpg.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/drawable/sate.jpg"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-36:/drawable_gudeg.jpg.flat",
+        "source": "com.auldy.makananindonesia.app-main-38:/drawable/gudeg.jpg"
+    }
+]

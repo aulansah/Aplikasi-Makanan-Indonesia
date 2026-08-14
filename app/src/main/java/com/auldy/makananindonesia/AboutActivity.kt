@@ -4,45 +4,34 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.KeyEvent
-import android.view.View
-import android.widget.ImageButton
+import com.auldy.makananindonesia.databinding.ActivityAboutBinding
 
-class AboutActivity : AppCompatActivity(), View.OnClickListener {
+class AboutActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityAboutBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_about)
+        binding = ActivityAboutBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         title = "About Me"
 
-        val btnSendEmail: ImageButton = findViewById(R.id.btn_send_email)
-        btnSendEmail.setOnClickListener(this)
+        binding.btnSendEmail.setOnClickListener {
+            val emailDeveloper = "a1211560@bangkit.academy"
+            val sendEmailIntent = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:$emailDeveloper"))
+            startActivity(sendEmailIntent)
+        }
 
-        val btnCheckProfile: ImageButton = findViewById(R.id.btn_check_dicoding)
-        btnCheckProfile.setOnClickListener(this)
-    }
-
-    override fun onClick(v: View) {
-        when(v.id){
-            R.id.btn_send_email -> {
-                val emailDeveloper = "a1211560@bangkit.academy"
-                val dialPhoneIntent = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:$emailDeveloper"))
-                //Uri.parse("mailto:")
-                startActivity(dialPhoneIntent)
-            }
-            R.id.btn_check_dicoding -> {
-                val profileDeveloperURL = "https://www.dicoding.com/users/auldyansya"
-                val checkDeveloperProfileIntent = Intent(Intent.ACTION_VIEW, Uri.parse(profileDeveloperURL))
-                if (checkDeveloperProfileIntent.resolveActivity(packageManager) != null) {
-                    startActivity(checkDeveloperProfileIntent)
-                }
+        binding.btnCheckDicoding.setOnClickListener {
+            val profileDeveloperURL = "https://www.dicoding.com/users/auldyansya"
+            val checkDeveloperProfileIntent = Intent(Intent.ACTION_VIEW, Uri.parse(profileDeveloperURL))
+            if (checkDeveloperProfileIntent.resolveActivity(packageManager) != null) {
+                startActivity(checkDeveloperProfileIntent)
             }
         }
     }
 
-    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            finish()
-        }
-        return super.onKeyDown(keyCode, event)
-    }
+    // Catatan: override onKeyDown(KEYCODE_BACK) di versi lama sengaja dihapus.
+    // Perilaku tombol back sistem sudah otomatis menutup Activity ini (finish()),
+    // jadi kode itu sebenarnya redundant sejak awal, dan pola onKeyDown untuk
+    // menangani tombol back sudah lama digantikan oleh OnBackPressedCallback.
 }

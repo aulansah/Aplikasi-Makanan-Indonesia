@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.auldy.makananindonesia.app-mergeDebugResources-34:/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\aulan\\.gradle\\caches\\8.13\\transforms\\3a8726276bf63eaf971d3d9179bc5ae5\\transformed\\appcompat-1.7.1\\res\\values-port\\values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        }
+    ]
+}
