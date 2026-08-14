@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Makanan Indonesia</string>
+    <string name="nama_makanan">Nama Makanan</string>
+    <string name="detail">Detail</string>
+    <string name="about">About</string>
+    <string name="nama_author">AULDY ANSYA RULLAH</string>
+    <string name="akun_gmail">a1211560@bangkit.academy</string>
+    <string name="check_profile">Check Profile</string>
+    <string name="send_email">Send Email</string>
+</resources>

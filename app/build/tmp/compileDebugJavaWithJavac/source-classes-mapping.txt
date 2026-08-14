@@ -1,0 +1,2 @@
+com/auldy/makananindonesia/BuildConfig.java
+ com.auldy.makananindonesia.BuildConfig
