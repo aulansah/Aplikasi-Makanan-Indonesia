@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="http://schemas.android.com/tools">
-    <style name="Theme.MakananIndonesia" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        
-        <item name="colorPrimary">@color/colorPrimaryDark</item>
-        <item name="colorPrimaryVariant">@color/colorPrimary</item>
-        <item name="colorOnPrimary">@color/black</item>
-        
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        
-        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
-        
+    <style name="Theme.MakananIndonesia" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/nds_primary</item>
+        <item name="colorPrimaryVariant">@color/nds_primary_dark</item>
+        <item name="colorOnPrimary">@color/nds_on_primary</item>
+        <item name="colorSecondary">@color/nds_accent_warm</item>
+        <item name="colorOnSecondary">@color/nds_on_surface</item>
+        <item name="android:colorBackground">@color/nds_background</item>
+        <item name="android:windowBackground">@color/nds_background</item>
+        <item name="android:statusBarColor" ns1:targetApi="l">@color/nds_background</item>
+        <item name="android:windowLightStatusBar" ns1:targetApi="m">true</item>
+        <item name="android:navigationBarColor">@color/nds_bottom_nav_bg</item>
+    </style>
+    <style name="Theme.MakananIndonesia.Detail" parent="Theme.MakananIndonesia">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar" ns1:targetApi="m">true</item>
     </style>
 </resources>

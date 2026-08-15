@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="http://schemas.android.com/tools">
     <color name="black">#FF000000</color>
-    <color name="colorAccent">#E3D096</color>
-    <color name="colorPrimary">#53929B</color>
-    <color name="colorPrimaryDark">#2E2A39</color>
+    <color name="colorAccent">#F4A622</color>
+    <color name="colorPrimary">#C0392B</color>
+    <color name="colorPrimaryDark">#A93226</color>
+    <color name="nds_accent_warm">#F4A622</color>
+    <color name="nds_background">#F5F0EB</color>
+    <color name="nds_bottom_nav_active">#FFFFFF</color>
+    <color name="nds_bottom_nav_bg">#1C1C1C</color>
+    <color name="nds_bottom_nav_inactive">#6B6B6B</color>
+    <color name="nds_on_primary">#FFFFFF</color>
+    <color name="nds_on_surface">#1A1A1A</color>
+    <color name="nds_on_surface_low">#ABABAB</color>
+    <color name="nds_on_surface_medium">#6B6B6B</color>
+    <color name="nds_primary">#C0392B</color>
+    <color name="nds_primary_container">#FDECEA</color>
+    <color name="nds_primary_dark">#A93226</color>
+    <color name="nds_primary_light">#E74C3C</color>
+    <color name="nds_star">#F4A622</color>
+    <color name="nds_surface">#FFFFFF</color>
+    <color name="nds_surface_variant">#FAF6F2</color>
+    <color name="nds_tag_bg">#F0EBE5</color>
+    <color name="nds_tag_text">#5C4A3A</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -13,22 +31,73 @@
     <string name="about">About</string>
     <string name="akun_gmail">a1211560@bangkit.academy</string>
     <string name="app_name">Makanan Indonesia</string>
+    <string name="btn_simpan_resep">Simpan Resep</string>
     <string name="check_profile">Check Profile</string>
+    <string name="chip_berdaging">Berdaging</string>
+    <string name="chip_berkuah">Berkuah</string>
+    <string name="chip_pedas">Pedas</string>
+    <string name="chip_semua">Semua</string>
     <string name="detail">Detail</string>
-    <string name="nama_author">AULDY ANSYA RULLAH</string>
+    <string name="footer_design_system">Nusantara Design System</string>
+    <string name="footer_tagline">Makanan Indonesia — dibuat dengan ♥ di Indonesia</string>
+    <string name="format_kalori">%1$d kkal</string>
+    <string name="format_menit">%1$d menit</string>
+    <string name="greeting">Selamat siang, Rani</string>
+    <string name="headline">Mau makan apa\nhari ini?</string>
+    <string name="label_aplikasi">APLIKASI</string>
+    <string name="label_asal">Masakan Minangkabau · Sumatera Barat</string>
+    <string name="label_bagikan_app">Bagikan Aplikasi</string>
+    <string name="label_bagikan_app_sub">Ajak teman coba juga</string>
+    <string name="label_beri_rating">Beri Rating</string>
+    <string name="label_beri_rating_sub">Bantu kami berkembang</string>
+    <string name="label_berkuah">Berkuah</string>
+    <string name="label_developer_sub">Developer Aplikasi · Dicoding</string>
+    <string name="label_estimasi_harga">Estimasi harga</string>
+    <string name="label_favorit">Favorit</string>
+    <string name="label_favorit_kosong">Belum ada favorit</string>
+    <string name="label_favorit_kosong_sub">Ketuk ikon ★ di halaman detail makanan\nuntuk menambahkannya ke favorit</string>
+    <string name="label_hubungi_developer">HUBUNGI DEVELOPER</string>
+    <string name="label_kalori">Kalori</string>
+    <string name="label_kirim_email">Kirim Email</string>
+    <string name="label_lihat_detail">Lihat detail →</string>
+    <string name="label_lihat_semua">Lihat semua</string>
+    <string name="label_profil">Profil</string>
+    <string name="label_profil_dicoding">Profil Dicoding</string>
+    <string name="label_profil_dicoding_sub">Lihat portofolio &amp; sertifikasi</string>
+    <string name="label_rating_app">Rating App</string>
+    <string name="label_rekomendasi">REKOMENDASI HARI INI</string>
+    <string name="label_resep">Resep</string>
+    <string name="label_semua_makanan">Semua Makanan</string>
+    <string name="label_tentang">Tentang Makanan Ini</string>
+    <string name="label_tentang_app">Tentang Aplikasi</string>
+    <string name="label_tentang_app_sub">Versi 2.0 · 2026</string>
+    <string name="label_tidak_ditemukan">Makanan tidak ditemukan</string>
+    <string name="label_tidak_ditemukan_sub">Coba kata kunci lain atau pilih\nkategori yang berbeda</string>
+    <string name="label_ulasan">Ulasan</string>
+    <string name="label_versi_rilis">Versi Rilis</string>
+    <string name="label_waktu">Waktu masak</string>
+    <string name="msg_dihapus_favorit">Dihapus dari favorit</string>
+    <string name="msg_ditambahkan_favorit">Ditambahkan ke favorit</string>
+    <string name="msg_riwayat_segera">Riwayat segera hadir</string>
+    <string name="nama_author">Auldyansya</string>
     <string name="nama_makanan">Nama Makanan</string>
+    <string name="search_hint">Cari rendang, soto, sate…</string>
     <string name="send_email">Send Email</string>
-    <style name="Theme.MakananIndonesia" parent="Theme.AppCompat.Light.DarkActionBar">
-        
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
-        <item name="colorOnPrimary">@color/white</item>
-        
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
-        
-        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
-        
+    <style name="Theme.MakananIndonesia" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/nds_primary</item>
+        <item name="colorPrimaryVariant">@color/nds_primary_dark</item>
+        <item name="colorOnPrimary">@color/nds_on_primary</item>
+        <item name="colorSecondary">@color/nds_accent_warm</item>
+        <item name="colorOnSecondary">@color/nds_on_surface</item>
+        <item name="android:colorBackground">@color/nds_background</item>
+        <item name="android:windowBackground">@color/nds_background</item>
+        <item name="android:statusBarColor" ns1:targetApi="l">@color/nds_background</item>
+        <item name="android:windowLightStatusBar" ns1:targetApi="m">true</item>
+        <item name="android:navigationBarColor">@color/nds_bottom_nav_bg</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    <style name="Theme.MakananIndonesia.Detail" parent="Theme.MakananIndonesia">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar" ns1:targetApi="m">true</item>
     </style>
 </resources>

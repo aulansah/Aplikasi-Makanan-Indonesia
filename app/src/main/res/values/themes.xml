@@ -1,16 +1,22 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.MakananIndonesia" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+    <!-- Nusantara Design System 2026 Theme — No ActionBar, cream background -->
+    <style name="Theme.MakananIndonesia" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/nds_primary</item>
+        <item name="colorPrimaryVariant">@color/nds_primary_dark</item>
+        <item name="colorOnPrimary">@color/nds_on_primary</item>
+        <item name="colorSecondary">@color/nds_accent_warm</item>
+        <item name="colorOnSecondary">@color/nds_on_surface</item>
+        <item name="android:colorBackground">@color/nds_background</item>
+        <item name="android:windowBackground">@color/nds_background</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/nds_background</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:navigationBarColor">@color/nds_bottom_nav_bg</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- Detail Activity: white background, transparent status bar -->
+    <style name="Theme.MakananIndonesia.Detail" parent="Theme.MakananIndonesia">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
     </style>
 </resources>

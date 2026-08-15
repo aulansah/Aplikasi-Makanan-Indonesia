@@ -1,22 +1,54 @@
-# Gradle
-.gradle/
-build/
+# =============================================
+# Aplikasi Makanan Indonesia — .gitignore
+# Android + Kotlin + Gradle + IntelliJ/Android Studio
+# =============================================
 
-# Android Studio
-.idea/
-*.iml
+# ----- Build outputs -----
+/build/
+/app/build/
 
-# Android build
-**/build/
-
-# Local configuration
+# ----- Local machine configuration -----
 local.properties
 
-# Generated files
-*.apk
-*.aab
-*.dex
+# ----- Gradle cache & wrapper -----
+.gradle/
+gradle/wrapper/gradle-wrapper.jar
 
-# OS
+# ----- Android Studio / IntelliJ IDEA project files -----
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# ----- Kotlin build cache -----
+.kotlin/
+
+# ----- OS generated files -----
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+desktop.ini
+
+# ----- Dependency lock / caches -----
+*.lock
+
+# ----- ProGuard mapping (keep if you do release builds) -----
+# app/build/outputs/mapping/
+
+# ----- Keystore & signing files — JANGAN COMMIT! -----
+*.jks
+*.keystore
+*.p12
+release.properties
+keystore.properties
+
+# ----- Google Services credentials -----
+google-services.json
+GoogleService-Info.plist
+
+# ----- Room generated schema exports (opsional — uncommit jika ingin include) -----
+# app/schemas/

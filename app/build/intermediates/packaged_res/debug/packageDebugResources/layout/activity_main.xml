@@ -1,16 +1,437 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:id="@+id/activity_main">
+    android:background="@color/nds_background"
+    tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/activity_makanan"
+    <!-- Scrollable content -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/item_row_makanan" />
+        android:fillViewport="true"
+        android:paddingBottom="100dp"
+        android:clipToPadding="false">
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ── Header ── -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_centerVertical="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/greeting"
+                        android:textSize="13sp"
+                        android:textColor="@color/nds_on_surface_medium"
+                        android:letterSpacing="0.01" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/headline"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/nds_on_surface"
+                        android:lineSpacingMultiplier="1.15"
+                        android:letterSpacing="-0.01" />
+
+                </LinearLayout>
+
+                <!-- Avatar circle -->
+                <View
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bg_avatar" />
+
+            </RelativeLayout>
+
+            <!-- ── Search Bar (functional) ── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_search_bar"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@android:drawable/ic_menu_search"
+                    android:layout_marginEnd="10dp"
+                    app:tint="@color/nds_on_surface_low" />
+
+                <EditText
+                    android:id="@+id/et_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="@string/search_hint"
+                    android:textColorHint="@color/nds_on_surface_low"
+                    android:textColor="@color/nds_on_surface"
+                    android:textSize="14sp"
+                    android:inputType="text"
+                    android:imeOptions="actionSearch"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+
+            <!-- ── Filter Chips (functional) ── -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingHorizontal="20dp"
+                android:scrollbars="none"
+                android:clipToPadding="false">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/chip_semua"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="@string/chip_semua"
+                        android:textColor="@color/nds_on_primary"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:paddingHorizontal="20dp"
+                        android:background="@drawable/bg_chip_active"
+                        android:layout_marginEnd="10dp" />
+
+                    <TextView
+                        android:id="@+id/chip_berkuah"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="@string/chip_berkuah"
+                        android:textColor="@color/nds_on_surface_medium"
+                        android:textSize="13sp"
+                        android:gravity="center"
+                        android:paddingHorizontal="20dp"
+                        android:background="@drawable/bg_chip_inactive"
+                        android:layout_marginEnd="10dp" />
+
+                    <TextView
+                        android:id="@+id/chip_berdaging"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="@string/chip_berdaging"
+                        android:textColor="@color/nds_on_surface_medium"
+                        android:textSize="13sp"
+                        android:gravity="center"
+                        android:paddingHorizontal="20dp"
+                        android:background="@drawable/bg_chip_inactive"
+                        android:layout_marginEnd="10dp" />
+
+                    <TextView
+                        android:id="@+id/chip_pedas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="@string/chip_pedas"
+                        android:textColor="@color/nds_on_surface_medium"
+                        android:textSize="13sp"
+                        android:gravity="center"
+                        android:paddingHorizontal="20dp"
+                        android:background="@drawable/bg_chip_inactive" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- ── Recommendation Card (data-driven + clickable) ── -->
+            <LinearLayout
+                android:id="@+id/card_featured"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_card_red"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:clipChildren="false"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <!-- Text side -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <!-- Label pill -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_rekomendasi"
+                        android:textSize="9sp"
+                        android:textStyle="bold"
+                        android:textColor="#B45309"
+                        android:background="@drawable/bg_rekomendasi_label"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="4dp"
+                        android:letterSpacing="0.08" />
+
+                    <TextView
+                        android:id="@+id/tv_featured_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:lineSpacingMultiplier="1.2"
+                        tools:text="Rendang Daging\nSapi Minang" />
+
+                    <TextView
+                        android:id="@+id/tv_featured_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textSize="12sp"
+                        android:textColor="#FFDDD5"
+                        android:maxLines="3"
+                        android:ellipsize="end"
+                        android:lineSpacingMultiplier="1.4"
+                        tools:text="Bumbu rempah otentik, dimasak berjam-jam hingga meresap" />
+
+                    <!-- Rating + lihat detail -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tv_featured_meta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:textColor="#FFDDD5"
+                            android:layout_weight="1"
+                            tools:text="★ 4.9  2.1k ulasan" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_lihat_detail"
+                            android:textSize="12sp"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Food image on the right -->
+                <ImageView
+                    android:id="@+id/iv_recommendation"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_marginStart="12dp"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/bg_circle_white"
+                    android:clipToOutline="true"
+                    tools:src="@drawable/rendang" />
+
+            </LinearLayout>
+
+            <!-- ── Semua Makanan header ── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/label_semua_makanan"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/nds_on_surface" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_lihat_semua"
+                    android:textSize="13sp"
+                    android:textColor="@color/nds_primary"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- ── Empty state (search/filter no results) ── -->
+            <LinearLayout
+                android:id="@+id/layout_empty_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingHorizontal="32dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔍"
+                    android:textSize="36sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/label_tidak_ditemukan"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/nds_on_surface" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/label_tidak_ditemukan_sub"
+                    android:textSize="12sp"
+                    android:textColor="@color/nds_on_surface_medium"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <!-- ── List Makanan ── -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/activity_makanan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:paddingHorizontal="20dp"
+                android:nestedScrollingEnabled="false"
+                android:clipToPadding="false"
+                tools:listitem="@layout/item_row_makanan" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ── Bottom Navigation Bar (floating, functional) ── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:paddingHorizontal="24dp"
+        android:paddingBottom="16dp"
+        android:paddingTop="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_bottom_nav"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:elevation="4dp">
+
+            <!-- Home icon (active — current screen) -->
+            <LinearLayout
+                android:id="@+id/nav_home"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="?attr/selectableItemBackgroundBorderless">
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@android:drawable/ic_menu_myplaces"
+                    app:tint="@color/nds_bottom_nav_active" />
+            </LinearLayout>
+
+            <!-- Favorite icon -->
+            <LinearLayout
+                android:id="@+id/nav_favorite"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="?attr/selectableItemBackgroundBorderless">
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@android:drawable/btn_star_big_off"
+                    app:tint="@color/nds_bottom_nav_inactive" />
+            </LinearLayout>
+
+            <!-- Menu / Riwayat icon -->
+            <LinearLayout
+                android:id="@+id/nav_menu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="?attr/selectableItemBackgroundBorderless">
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@android:drawable/ic_menu_sort_by_size"
+                    app:tint="@color/nds_bottom_nav_inactive" />
+            </LinearLayout>
+
+            <!-- Profile icon -->
+            <LinearLayout
+                android:id="@+id/nav_profile"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="?attr/selectableItemBackgroundBorderless">
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@android:drawable/ic_menu_my_calendar"
+                    app:tint="@color/nds_bottom_nav_inactive" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

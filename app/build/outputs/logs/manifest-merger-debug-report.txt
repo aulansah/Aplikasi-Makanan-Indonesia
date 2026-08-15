@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:2:1-28:12
-INJECTED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:2:1-28:12
-INJECTED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:2:1-28:12
-INJECTED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:2:1-28:12
+ADDED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:2:1-32:12
 MERGED from [androidx.databinding:viewbinding:8.13.0] C:\Users\aulan\.gradle\caches\8.13\transforms\4d5404b67d28f0f2483444019812c31c\transformed\viewbinding-8.13.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\aulan\.gradle\caches\8.13\transforms\d3a1a973c5ce402d27576cd75a2feddf\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\aulan\.gradle\caches\8.13\transforms\b64f10699012f53901dc07b9d4adfb0a\transformed\constraintlayout-2.2.1\AndroidManifest.xml:2:1-9:12
@@ -73,8 +73,8 @@ MERGED from [com.github.bumptech.glide:disklrucache:5.0.7] C:\Users\aulan\.gradl
 	xmlns:android
 		ADDED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:4:5-26:19
-INJECTED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:4:5-26:19
+ADDED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:4:5-30:19
+INJECTED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:4:5-30:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\aulan\.gradle\caches\8.13\transforms\d3a1a973c5ce402d27576cd75a2feddf\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\aulan\.gradle\caches\8.13\transforms\d3a1a973c5ce402d27576cd75a2feddf\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\aulan\.gradle\caches\8.13\transforms\b64f10699012f53901dc07b9d4adfb0a\transformed\constraintlayout-2.2.1\AndroidManifest.xml:7:5-20
@@ -134,11 +134,19 @@ ADDED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Mak
 	android:name
 		ADDED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:21:13-42
 activity#com.auldy.makananindonesia.DetailActivity
-ADDED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:23:9-25:40
+ADDED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:23:9-26:68
 	android:exported
 		ADDED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:26:13-65
 	android:name
 		ADDED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:24:13-43
+activity#com.auldy.makananindonesia.FavoriteActivity
+ADDED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:27:9-29:40
+	android:exported
+		ADDED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:29:13-37
+	android:name
+		ADDED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml:28:13-45
 uses-sdk
 INJECTED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\aulan\Downloads\Aplikasi-Makanan-Indonesia-main\Aplikasi-Makanan-Indonesia-main\app\src\main\AndroidManifest.xml

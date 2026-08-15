@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.auldy.makananindonesia.data.repository.MakananRepository
 import com.auldy.makananindonesia.di.Injection
 import com.auldy.makananindonesia.ui.detail.DetailViewModel
+import com.auldy.makananindonesia.ui.favorite.FavoriteViewModel
 import com.auldy.makananindonesia.ui.main.MainViewModel
 
 class ViewModelFactory(
@@ -20,6 +21,9 @@ class ViewModelFactory(
             }
             modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
                 DetailViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(FavoriteViewModel::class.java) -> {
+                FavoriteViewModel(repository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
         }

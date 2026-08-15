@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Nusantara Design System — Primary Red -->
+    <color name="nds_primary">#C0392B</color>
+    <color name="nds_primary_dark">#A93226</color>
+    <color name="nds_primary_light">#E74C3C</color>
+    <color name="nds_primary_container">#FDECEA</color>
+
+    <!-- Backgrounds -->
+    <color name="nds_background">#F5F0EB</color>
+    <color name="nds_surface">#FFFFFF</color>
+    <color name="nds_surface_variant">#FAF6F2</color>
+
+    <!-- Text -->
+    <color name="nds_on_primary">#FFFFFF</color>
+    <color name="nds_on_surface">#1A1A1A</color>
+    <color name="nds_on_surface_medium">#6B6B6B</color>
+    <color name="nds_on_surface_low">#ABABAB</color>
+
+    <!-- Accent & Tags -->
+    <color name="nds_accent_warm">#F4A622</color>
+    <color name="nds_tag_bg">#F0EBE5</color>
+    <color name="nds_tag_text">#5C4A3A</color>
+
+    <!-- Star rating -->
+    <color name="nds_star">#F4A622</color>
+
+    <!-- Bottom nav -->
+    <color name="nds_bottom_nav_bg">#1C1C1C</color>
+    <color name="nds_bottom_nav_active">#FFFFFF</color>
+    <color name="nds_bottom_nav_inactive">#6B6B6B</color>
+
+    <!-- Legacy — kept for backward compat -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,7 +38,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="colorPrimary">#53929B</color>
-    <color name="colorPrimaryDark">#2E2A39</color>
-    <color name="colorAccent">#E3D096</color>
+    <color name="colorPrimary">#C0392B</color>
+    <color name="colorPrimaryDark">#A93226</color>
+    <color name="colorAccent">#F4A622</color>
 </resources>

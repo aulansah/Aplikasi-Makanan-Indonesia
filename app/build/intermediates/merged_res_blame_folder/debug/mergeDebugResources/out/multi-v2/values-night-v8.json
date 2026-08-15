@@ -6,6 +6,60 @@
                 {
                     "source": "C:\\Users\\aulan\\Downloads\\Aplikasi-Makanan-Indonesia-main\\Aplikasi-Makanan-Indonesia-main\\app\\src\\main\\res\\values-night\\themes.xml",
                     "from": {
+                        "startLines": "2,15",
+                        "startColumns": "4,4",
+                        "startOffsets": "137,979",
+                        "endLines": "13,18",
+                        "endColumns": "12,12",
+                        "endOffsets": "973,1228"
+                    },
+                    "to": {
+                        "startLines": "9,21",
+                        "startColumns": "4,4",
+                        "startOffsets": "732,1569",
+                        "endLines": "20,24",
+                        "endColumns": "12,12",
+                        "endOffsets": "1564,1816"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\aulan\\.gradle\\caches\\8.13\\transforms\\d3a1a973c5ce402d27576cd75a2feddf\\transformed\\material-1.12.0\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,52,53,54,55,56,57,58,59",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1821,1896,2007,2096,2197,2304,2411,2510,2617,2720,2847,2935,3059,3161,3263,3379,3481,3595,3723,3839,3961,4097,4217,4351,4471,4583,4798,4915,5039,5169,5291,5429,5563,5679",
+                        "endColumns": "74,110,88,100,106,106,98,106,102,126,87,123,101,101,115,101,113,127,115,121,135,119,133,119,111,125,116,123,129,121,137,133,115,119",
+                        "endOffsets": "1891,2002,2091,2192,2299,2406,2505,2612,2715,2842,2930,3054,3156,3258,3374,3476,3590,3718,3834,3956,4092,4212,4346,4466,4578,4704,4910,5034,5164,5286,5424,5558,5674,5794"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\aulan\\.gradle\\caches\\8.13\\transforms\\247df4894f128ccbb58944636baaf8e6\\transformed\\appcompat-1.7.1\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,51",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "100,170,254,338,434,536,638,4709",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "165,249,333,429,531,633,727,4793"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-mergeDebugResources-44:\\values-night-v8\\values-night-v8.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\aulan\\Downloads\\Aplikasi-Makanan-Indonesia-main\\Aplikasi-Makanan-Indonesia-main\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "from": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "102",

@@ -5,11 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.auldy.makananindonesia.R;
@@ -19,10 +20,19 @@ import java.lang.String;
 
 public final class ActivityDetailBinding implements ViewBinding {
   @NonNull
-  private final ScrollView rootView;
+  private final CoordinatorLayout rootView;
 
   @NonNull
-  public final Button btnBack;
+  public final FrameLayout btnBack;
+
+  @NonNull
+  public final FrameLayout btnFavorite;
+
+  @NonNull
+  public final ImageView btnFavoriteIcon;
+
+  @NonNull
+  public final Button btnSimpanResep;
 
   @NonNull
   public final TextView makananDetail;
@@ -33,19 +43,58 @@ public final class ActivityDetailBinding implements ViewBinding {
   @NonNull
   public final ImageView makananPhoto;
 
-  private ActivityDetailBinding(@NonNull ScrollView rootView, @NonNull Button btnBack,
-      @NonNull TextView makananDetail, @NonNull TextView makananNama,
-      @NonNull ImageView makananPhoto) {
+  @NonNull
+  public final TextView tvHarga;
+
+  @NonNull
+  public final TextView tvKalori;
+
+  @NonNull
+  public final TextView tvOrigin;
+
+  @NonNull
+  public final TextView tvRating;
+
+  @NonNull
+  public final TextView tvTagCategory;
+
+  @NonNull
+  public final TextView tvTagWaktu;
+
+  @NonNull
+  public final TextView tvUlasan;
+
+  @NonNull
+  public final TextView tvWaktu;
+
+  private ActivityDetailBinding(@NonNull CoordinatorLayout rootView, @NonNull FrameLayout btnBack,
+      @NonNull FrameLayout btnFavorite, @NonNull ImageView btnFavoriteIcon,
+      @NonNull Button btnSimpanResep, @NonNull TextView makananDetail,
+      @NonNull TextView makananNama, @NonNull ImageView makananPhoto, @NonNull TextView tvHarga,
+      @NonNull TextView tvKalori, @NonNull TextView tvOrigin, @NonNull TextView tvRating,
+      @NonNull TextView tvTagCategory, @NonNull TextView tvTagWaktu, @NonNull TextView tvUlasan,
+      @NonNull TextView tvWaktu) {
     this.rootView = rootView;
     this.btnBack = btnBack;
+    this.btnFavorite = btnFavorite;
+    this.btnFavoriteIcon = btnFavoriteIcon;
+    this.btnSimpanResep = btnSimpanResep;
     this.makananDetail = makananDetail;
     this.makananNama = makananNama;
     this.makananPhoto = makananPhoto;
+    this.tvHarga = tvHarga;
+    this.tvKalori = tvKalori;
+    this.tvOrigin = tvOrigin;
+    this.tvRating = tvRating;
+    this.tvTagCategory = tvTagCategory;
+    this.tvTagWaktu = tvTagWaktu;
+    this.tvUlasan = tvUlasan;
+    this.tvWaktu = tvWaktu;
   }
 
   @Override
   @NonNull
-  public ScrollView getRoot() {
+  public CoordinatorLayout getRoot() {
     return rootView;
   }
 
@@ -71,8 +120,26 @@ public final class ActivityDetailBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btn_back;
-      Button btnBack = ViewBindings.findChildViewById(rootView, id);
+      FrameLayout btnBack = ViewBindings.findChildViewById(rootView, id);
       if (btnBack == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_favorite;
+      FrameLayout btnFavorite = ViewBindings.findChildViewById(rootView, id);
+      if (btnFavorite == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_favorite_icon;
+      ImageView btnFavoriteIcon = ViewBindings.findChildViewById(rootView, id);
+      if (btnFavoriteIcon == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_simpan_resep;
+      Button btnSimpanResep = ViewBindings.findChildViewById(rootView, id);
+      if (btnSimpanResep == null) {
         break missingId;
       }
 
@@ -94,8 +161,57 @@ public final class ActivityDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityDetailBinding((ScrollView) rootView, btnBack, makananDetail, makananNama,
-          makananPhoto);
+      id = R.id.tv_harga;
+      TextView tvHarga = ViewBindings.findChildViewById(rootView, id);
+      if (tvHarga == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_kalori;
+      TextView tvKalori = ViewBindings.findChildViewById(rootView, id);
+      if (tvKalori == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_origin;
+      TextView tvOrigin = ViewBindings.findChildViewById(rootView, id);
+      if (tvOrigin == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_rating;
+      TextView tvRating = ViewBindings.findChildViewById(rootView, id);
+      if (tvRating == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_tag_category;
+      TextView tvTagCategory = ViewBindings.findChildViewById(rootView, id);
+      if (tvTagCategory == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_tag_waktu;
+      TextView tvTagWaktu = ViewBindings.findChildViewById(rootView, id);
+      if (tvTagWaktu == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_ulasan;
+      TextView tvUlasan = ViewBindings.findChildViewById(rootView, id);
+      if (tvUlasan == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_waktu;
+      TextView tvWaktu = ViewBindings.findChildViewById(rootView, id);
+      if (tvWaktu == null) {
+        break missingId;
+      }
+
+      return new ActivityDetailBinding((CoordinatorLayout) rootView, btnBack, btnFavorite,
+          btnFavoriteIcon, btnSimpanResep, makananDetail, makananNama, makananPhoto, tvHarga,
+          tvKalori, tvOrigin, tvRating, tvTagCategory, tvTagWaktu, tvUlasan, tvWaktu);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

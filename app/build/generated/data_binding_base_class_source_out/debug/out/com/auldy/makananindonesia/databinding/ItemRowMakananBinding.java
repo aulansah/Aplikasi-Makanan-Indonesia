@@ -4,6 +4,7 @@ package com.auldy.makananindonesia.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -11,7 +12,6 @@ import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.auldy.makananindonesia.R;
-import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -21,7 +21,7 @@ public final class ItemRowMakananBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final CircleImageView imgItemPhoto;
+  public final ImageView imgItemPhoto;
 
   @NonNull
   public final TextView tvItemDetail;
@@ -29,13 +29,21 @@ public final class ItemRowMakananBinding implements ViewBinding {
   @NonNull
   public final TextView tvItemName;
 
-  private ItemRowMakananBinding(@NonNull LinearLayout rootView,
-      @NonNull CircleImageView imgItemPhoto, @NonNull TextView tvItemDetail,
-      @NonNull TextView tvItemName) {
+  @NonNull
+  public final TextView tvItemRating;
+
+  @NonNull
+  public final TextView tvItemTag;
+
+  private ItemRowMakananBinding(@NonNull LinearLayout rootView, @NonNull ImageView imgItemPhoto,
+      @NonNull TextView tvItemDetail, @NonNull TextView tvItemName, @NonNull TextView tvItemRating,
+      @NonNull TextView tvItemTag) {
     this.rootView = rootView;
     this.imgItemPhoto = imgItemPhoto;
     this.tvItemDetail = tvItemDetail;
     this.tvItemName = tvItemName;
+    this.tvItemRating = tvItemRating;
+    this.tvItemTag = tvItemTag;
   }
 
   @Override
@@ -66,7 +74,7 @@ public final class ItemRowMakananBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.img_item_photo;
-      CircleImageView imgItemPhoto = ViewBindings.findChildViewById(rootView, id);
+      ImageView imgItemPhoto = ViewBindings.findChildViewById(rootView, id);
       if (imgItemPhoto == null) {
         break missingId;
       }
@@ -83,8 +91,20 @@ public final class ItemRowMakananBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tv_item_rating;
+      TextView tvItemRating = ViewBindings.findChildViewById(rootView, id);
+      if (tvItemRating == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_item_tag;
+      TextView tvItemTag = ViewBindings.findChildViewById(rootView, id);
+      if (tvItemTag == null) {
+        break missingId;
+      }
+
       return new ItemRowMakananBinding((LinearLayout) rootView, imgItemPhoto, tvItemDetail,
-          tvItemName);
+          tvItemName, tvItemRating, tvItemTag);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

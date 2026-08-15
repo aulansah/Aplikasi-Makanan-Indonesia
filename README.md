@@ -1,8 +1,46 @@
 # Aplikasi Makanan Indonesia
 
-Aplikasi Android katalog 10 makanan khas Indonesia (Bakso, Gudeg, Rendang, dll) lengkap dengan foto dan deskripsi. Dibangun menggunakan Kotlin dengan arsitektur **MVVM (Model-View-ViewModel)**, **Repository Pattern**, dan **Room Database (Android Jetpack)**.
+Aplikasi Android katalog 10 makanan khas Indonesia (Bakso, Gudeg, Rendang, dll) lengkap dengan foto dan deskripsi. Dibangun menggunakan Kotlin dengan arsitektur **MVVM (Model-View-ViewModel)**, **Repository Pattern**, dan **Room Database (Android Jetpack)**. Tampilan menggunakan **Nusantara Design System 2026**.
 
 ---
+
+## 🎨 UI Redesign 2026 — Nusantara Design System
+
+Tampilan aplikasi didesain ulang sepenuhnya mengacu pada desain **Figma 2026** dengan visual language khas Indonesia:
+
+| Layar | Perubahan Utama |
+|---|---|
+| **MainActivity** | Header greeting + search bar pill + filter chips (Semua/Berkuah/Berdaging/Pedas) + kartu rekomendasi merah (Rendang) + list makanan card putih + floating bottom nav gelap |
+| **DetailActivity** | Full-bleed foto hero di atas + bottom sheet putih dengan rounded corners + judul + rating bintang + tag chips + stats baris (🔥Kalori / ⏱Waktu / 👥Ulasan) + deskripsi + bottom bar harga + tombol **Simpan Resep** |
+| **AboutActivity (Profil)** | Header card merah dengan avatar inisial + nama + stats (Resep/Rating/Versi) + kartu putih berisi link developer (Email, Dicoding) + menu aplikasi (Beri Rating, Bagikan, Tentang) + footer tagline |
+
+### 🎨 Design Tokens (Nusantara Design System)
+| Token | Value | Keterangan |
+|---|---|---|
+| Primary | `#C0392B` | Merah nusantara utama |
+| Primary Dark | `#A93226` | Hover/pressed state |
+| Background | `#F5F0EB` | Krem hangat |
+| Surface | `#FFFFFF` | Card putih |
+| Accent | `#F4A622` | Bintang rating, year stat |
+| On Surface | `#1A1A1A` | Teks utama |
+| On Surface Medium | `#6B6B6B` | Teks sekunder |
+| Bottom Nav | `#1C1C1C` | Dark floating nav |
+
+### 📐 Komponen UI Baru (Drawable)
+- `bg_card_white.xml` — card putih dengan radius 20dp
+- `bg_card_red.xml` — kartu rekomendasi merah radius 24dp
+- `bg_search_bar.xml` — pill input pencarian krem
+- `bg_chip_active.xml` / `bg_chip_inactive.xml` — filter chip aktif/nonaktif
+- `bg_tag.xml` — label kategori hangat
+- `bg_rekomendasi_label.xml` — label "REKOMENDASI HARI INI" golden yellow
+- `bg_btn_primary.xml` — tombol Simpan Resep merah
+- `bg_circle_white.xml` — tombol back/favorit floating bulat
+- `bg_bottom_nav.xml` — floating bottom nav gelap
+- `bg_avatar.xml` — lingkaran avatar inisial
+- `bg_bottom_sheet.xml` — panel content detail top-rounded
+- `bg_icon_container.xml` — container ikon menu about
+
+
 
 ## 🏛️ Arsitektur Aplikasi (MVVM + Repository + Room)
 
@@ -133,8 +171,28 @@ Kalau proyek versi 2021 dibuka apa adanya di Android Studio versi sekarang, buil
 
 ---
 
+## 📄 .gitignore
+
+File [`.gitignore`](.gitignore) sudah dibuat dan mengecualikan folder/file berikut dari Git:
+
+| Yang Diignore | Alasan |
+|---|---|
+| `/build/`, `/app/build/` | Output build Gradle — di-generate ulang tiap build |
+| `local.properties` | Path SDK lokal, berbeda di setiap mesin |
+| `.gradle/` | Cache Gradle lokal |
+| `.idea/` | Konfigurasi IDE spesifik mesin |
+| `*.iml`, `*.iws`, `*.ipr` | File IntelliJ project |
+| `.kotlin/` | Cache Kotlin build |
+| `*.jks`, `*.keystore` | **Keystore signing** — JANGAN pernah di-commit! |
+| `google-services.json` | Credentials Firebase — JANGAN di-commit! |
+| `local.properties` | Lokasi SDK Android lokal |
+| `.DS_Store`, `Thumbs.db` | File OS (Mac/Windows) |
+
+---
+
 ## 🚀 Ide Pengembangan Selanjutnya (opsional)
-- Migrasi UI dari XML layout ke **Jetpack Compose**.
-- Menambahkan fitur UI tombol Favorite/Bookmark di `DetailActivity` yang langsung meng-update `isFavorite` di Room Database.
-- Fitur pencarian makanan (Search Bar) di `MainActivity` memanfaatkan `makananDao.searchMakanan(query)`.
+- Fungsikan **filter chip** (Berkuah/Berdaging/Pedas) dengan query `makananDao.searchMakanan()` atau field kategori baru di entity.
+- Fungsikan **tombol Simpan Resep** di `DetailActivity` — update `isFavorite = true` di Room Database.
+- Implementasikan **halaman Favorit** (`FavoriteActivity`) memanfaatkan `makananDao.getFavoriteMakanan()` yang sudah tersedia.
+- Migrasi UI dari XML layout ke **Jetpack Compose** dengan `Nusantara Design System` yang sama.
 - Menambahkan remote data source (Firebase / REST API) ke dalam `MakananRepository` untuk sinkronisasi cloud.

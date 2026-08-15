@@ -4,8 +4,8 @@ package com.auldy.makananindonesia.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,26 +18,26 @@ import java.lang.String;
 
 public final class ActivityAboutBinding implements ViewBinding {
   @NonNull
-  private final RelativeLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final TextView akunGmail;
 
   @NonNull
-  public final ImageButton btnCheckDicoding;
+  public final LinearLayout btnCheckDicoding;
 
   @NonNull
-  public final ImageButton btnSendEmail;
+  public final LinearLayout btnSendEmail;
 
   @NonNull
   public final TextView namaAuthor;
 
   @NonNull
-  public final RelativeLayout rvAbout;
+  public final ScrollView rvAbout;
 
-  private ActivityAboutBinding(@NonNull RelativeLayout rootView, @NonNull TextView akunGmail,
-      @NonNull ImageButton btnCheckDicoding, @NonNull ImageButton btnSendEmail,
-      @NonNull TextView namaAuthor, @NonNull RelativeLayout rvAbout) {
+  private ActivityAboutBinding(@NonNull ScrollView rootView, @NonNull TextView akunGmail,
+      @NonNull LinearLayout btnCheckDicoding, @NonNull LinearLayout btnSendEmail,
+      @NonNull TextView namaAuthor, @NonNull ScrollView rvAbout) {
     this.rootView = rootView;
     this.akunGmail = akunGmail;
     this.btnCheckDicoding = btnCheckDicoding;
@@ -48,7 +48,7 @@ public final class ActivityAboutBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public RelativeLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -80,13 +80,13 @@ public final class ActivityAboutBinding implements ViewBinding {
       }
 
       id = R.id.btn_check_dicoding;
-      ImageButton btnCheckDicoding = ViewBindings.findChildViewById(rootView, id);
+      LinearLayout btnCheckDicoding = ViewBindings.findChildViewById(rootView, id);
       if (btnCheckDicoding == null) {
         break missingId;
       }
 
       id = R.id.btn_send_email;
-      ImageButton btnSendEmail = ViewBindings.findChildViewById(rootView, id);
+      LinearLayout btnSendEmail = ViewBindings.findChildViewById(rootView, id);
       if (btnSendEmail == null) {
         break missingId;
       }
@@ -97,9 +97,9 @@ public final class ActivityAboutBinding implements ViewBinding {
         break missingId;
       }
 
-      RelativeLayout rvAbout = (RelativeLayout) rootView;
+      ScrollView rvAbout = (ScrollView) rootView;
 
-      return new ActivityAboutBinding((RelativeLayout) rootView, akunGmail, btnCheckDicoding,
+      return new ActivityAboutBinding((ScrollView) rootView, akunGmail, btnCheckDicoding,
           btnSendEmail, namaAuthor, rvAbout);
     }
     String missingId = rootView.getResources().getResourceName(id);

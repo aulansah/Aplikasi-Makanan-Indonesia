@@ -1,134 +1,202 @@
 [
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/drawable_nasigoreng.jpg.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/drawable/nasigoreng.jpg"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/mipmap-hdpi/ic_launcher.png"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\layout_activity_about.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\layout\\activity_about.xml"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_bg_bottom_nav.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\bg_bottom_nav.xml"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_bg_tag.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\bg_tag.xml"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_sate.jpg.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\sate.jpg"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\menu_menu_about.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\menu\\menu_about.xml"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_bg_bottom_sheet.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\bg_bottom_sheet.xml"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_pempek.jpg.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\pempek.jpg"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_about.png.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\about.png"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_rendang.jpg.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\rendang.jpg"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-pngs-42:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_soto.jpg.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\soto.jpg"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_bg_chip_inactive.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\bg_chip_inactive.xml"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable-v24_email_icon.png.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable-v24\\email_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\layout_activity_detail.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\layout\\activity_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_nasigoreng.jpg.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\nasigoreng.jpg"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_mieayam.jpg.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\mieayam.jpg"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-debug-46:/layout_activity_favorite.xml.flat",
+        "source": "com.auldy.makananindonesia.app-main-48:/layout/activity_favorite.xml"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_auldy.jpg.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\auldy.jpg"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_bg_card_red.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\bg_card_red.xml"
     },
     {
         "merged": "com.auldy.makananindonesia.app-debug-46:/layout_activity_main.xml.flat",
         "source": "com.auldy.makananindonesia.app-main-48:/layout/activity_main.xml"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/menu_menu_about.xml.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/menu/menu_about.xml"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_bg_chip_active.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\bg_chip_active.xml"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/drawable-v24_email_icon.png.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/drawable-v24/email_icon.png"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/drawable_sate.jpg.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/drawable/sate.jpg"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_bg_icon_container.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\bg_icon_container.xml"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable-v24_dicoding_icon.png.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable-v24\\dicoding_icon.png"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/drawable/ic_launcher_background.xml"
-    },
-    {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/drawable_rawon.jpg.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/drawable/rawon.jpg"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\layout_item_row_makanan.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\layout\\item_row_makanan.xml"
     },
     {
         "merged": "com.auldy.makananindonesia.app-debug-46:/layout_activity_detail.xml.flat",
         "source": "com.auldy.makananindonesia.app-main-48:/layout/activity_detail.xml"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/drawable_pecel.jpg.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/drawable/pecel.jpg"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_bg_card_white.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\bg_card_white.xml"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_bakso.jpg.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\bakso.jpg"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/drawable-v24_dicoding_icon.png.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/drawable-v24/dicoding_icon.png"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_bg_btn_primary.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\bg_btn_primary.xml"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/drawable_mieayam.jpg.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/drawable/mieayam.jpg"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_bg_rekomendasi_label.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\bg_rekomendasi_label.xml"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "com.auldy.makananindonesia.app-pngs-42:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_bg_circle_white.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\bg_circle_white.xml"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/layout_item_row_makanan.xml.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/layout/item_row_makanan.xml"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_gudeg.jpg.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\gudeg.jpg"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/drawable_bakso.jpg.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/drawable/bakso.jpg"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_pecel.jpg.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\pecel.jpg"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/mipmap-mdpi/ic_launcher.png"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_bg_avatar.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\bg_avatar.xml"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/layout_activity_about.xml.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/layout/activity_about.xml"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_bg_thumbnail.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\bg_thumbnail.xml"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_bg_search_bar.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\bg_search_bar.xml"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/drawable_gudeg.jpg.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/drawable/gudeg.jpg"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\drawable_rawon.jpg.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\drawable\\rawon.jpg"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/drawable_about.png.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/drawable/about.png"
-    },
-    {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/drawable_rendang.jpg.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/drawable/rendang.jpg"
-    },
-    {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/drawable_auldy.jpg.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/drawable/auldy.jpg"
-    },
-    {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/drawable_soto.jpg.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/drawable/soto.jpg"
-    },
-    {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/mipmap-xxxhdpi/ic_launcher.png"
-    },
-    {
-        "merged": "com.auldy.makananindonesia.app-debug-46:/drawable_pempek.jpg.flat",
-        "source": "com.auldy.makananindonesia.app-main-48:/drawable/pempek.jpg"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-debug-46:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\mipmap-anydpi-v26\\ic_launcher.xml"
     }
 ]

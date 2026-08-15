@@ -4,9 +4,14 @@ package com.auldy.makananindonesia.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -17,24 +22,100 @@ import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final RelativeLayout rootView;
+  private final CoordinatorLayout rootView;
 
   @NonNull
-  public final RelativeLayout activityMain;
+  public final CoordinatorLayout activityMain;
 
   @NonNull
   public final RecyclerView activityMakanan;
 
-  private ActivityMainBinding(@NonNull RelativeLayout rootView,
-      @NonNull RelativeLayout activityMain, @NonNull RecyclerView activityMakanan) {
+  @NonNull
+  public final LinearLayout cardFeatured;
+
+  @NonNull
+  public final TextView chipBerdaging;
+
+  @NonNull
+  public final TextView chipBerkuah;
+
+  @NonNull
+  public final TextView chipPedas;
+
+  @NonNull
+  public final TextView chipSemua;
+
+  @NonNull
+  public final EditText etSearch;
+
+  @NonNull
+  public final View ivAvatar;
+
+  @NonNull
+  public final ImageView ivRecommendation;
+
+  @NonNull
+  public final LinearLayout layoutEmptyResult;
+
+  @NonNull
+  public final LinearLayout navFavorite;
+
+  @NonNull
+  public final LinearLayout navHome;
+
+  @NonNull
+  public final LinearLayout navMenu;
+
+  @NonNull
+  public final LinearLayout navProfile;
+
+  @NonNull
+  public final NestedScrollView scrollContent;
+
+  @NonNull
+  public final TextView tvFeaturedDesc;
+
+  @NonNull
+  public final TextView tvFeaturedMeta;
+
+  @NonNull
+  public final TextView tvFeaturedTitle;
+
+  private ActivityMainBinding(@NonNull CoordinatorLayout rootView,
+      @NonNull CoordinatorLayout activityMain, @NonNull RecyclerView activityMakanan,
+      @NonNull LinearLayout cardFeatured, @NonNull TextView chipBerdaging,
+      @NonNull TextView chipBerkuah, @NonNull TextView chipPedas, @NonNull TextView chipSemua,
+      @NonNull EditText etSearch, @NonNull View ivAvatar, @NonNull ImageView ivRecommendation,
+      @NonNull LinearLayout layoutEmptyResult, @NonNull LinearLayout navFavorite,
+      @NonNull LinearLayout navHome, @NonNull LinearLayout navMenu,
+      @NonNull LinearLayout navProfile, @NonNull NestedScrollView scrollContent,
+      @NonNull TextView tvFeaturedDesc, @NonNull TextView tvFeaturedMeta,
+      @NonNull TextView tvFeaturedTitle) {
     this.rootView = rootView;
     this.activityMain = activityMain;
     this.activityMakanan = activityMakanan;
+    this.cardFeatured = cardFeatured;
+    this.chipBerdaging = chipBerdaging;
+    this.chipBerkuah = chipBerkuah;
+    this.chipPedas = chipPedas;
+    this.chipSemua = chipSemua;
+    this.etSearch = etSearch;
+    this.ivAvatar = ivAvatar;
+    this.ivRecommendation = ivRecommendation;
+    this.layoutEmptyResult = layoutEmptyResult;
+    this.navFavorite = navFavorite;
+    this.navHome = navHome;
+    this.navMenu = navMenu;
+    this.navProfile = navProfile;
+    this.scrollContent = scrollContent;
+    this.tvFeaturedDesc = tvFeaturedDesc;
+    this.tvFeaturedMeta = tvFeaturedMeta;
+    this.tvFeaturedTitle = tvFeaturedTitle;
   }
 
   @Override
   @NonNull
-  public RelativeLayout getRoot() {
+  public CoordinatorLayout getRoot() {
     return rootView;
   }
 
@@ -59,7 +140,7 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      RelativeLayout activityMain = (RelativeLayout) rootView;
+      CoordinatorLayout activityMain = (CoordinatorLayout) rootView;
 
       id = R.id.activity_makanan;
       RecyclerView activityMakanan = ViewBindings.findChildViewById(rootView, id);
@@ -67,7 +148,112 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((RelativeLayout) rootView, activityMain, activityMakanan);
+      id = R.id.card_featured;
+      LinearLayout cardFeatured = ViewBindings.findChildViewById(rootView, id);
+      if (cardFeatured == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_berdaging;
+      TextView chipBerdaging = ViewBindings.findChildViewById(rootView, id);
+      if (chipBerdaging == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_berkuah;
+      TextView chipBerkuah = ViewBindings.findChildViewById(rootView, id);
+      if (chipBerkuah == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_pedas;
+      TextView chipPedas = ViewBindings.findChildViewById(rootView, id);
+      if (chipPedas == null) {
+        break missingId;
+      }
+
+      id = R.id.chip_semua;
+      TextView chipSemua = ViewBindings.findChildViewById(rootView, id);
+      if (chipSemua == null) {
+        break missingId;
+      }
+
+      id = R.id.et_search;
+      EditText etSearch = ViewBindings.findChildViewById(rootView, id);
+      if (etSearch == null) {
+        break missingId;
+      }
+
+      id = R.id.iv_avatar;
+      View ivAvatar = ViewBindings.findChildViewById(rootView, id);
+      if (ivAvatar == null) {
+        break missingId;
+      }
+
+      id = R.id.iv_recommendation;
+      ImageView ivRecommendation = ViewBindings.findChildViewById(rootView, id);
+      if (ivRecommendation == null) {
+        break missingId;
+      }
+
+      id = R.id.layout_empty_result;
+      LinearLayout layoutEmptyResult = ViewBindings.findChildViewById(rootView, id);
+      if (layoutEmptyResult == null) {
+        break missingId;
+      }
+
+      id = R.id.nav_favorite;
+      LinearLayout navFavorite = ViewBindings.findChildViewById(rootView, id);
+      if (navFavorite == null) {
+        break missingId;
+      }
+
+      id = R.id.nav_home;
+      LinearLayout navHome = ViewBindings.findChildViewById(rootView, id);
+      if (navHome == null) {
+        break missingId;
+      }
+
+      id = R.id.nav_menu;
+      LinearLayout navMenu = ViewBindings.findChildViewById(rootView, id);
+      if (navMenu == null) {
+        break missingId;
+      }
+
+      id = R.id.nav_profile;
+      LinearLayout navProfile = ViewBindings.findChildViewById(rootView, id);
+      if (navProfile == null) {
+        break missingId;
+      }
+
+      id = R.id.scroll_content;
+      NestedScrollView scrollContent = ViewBindings.findChildViewById(rootView, id);
+      if (scrollContent == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_featured_desc;
+      TextView tvFeaturedDesc = ViewBindings.findChildViewById(rootView, id);
+      if (tvFeaturedDesc == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_featured_meta;
+      TextView tvFeaturedMeta = ViewBindings.findChildViewById(rootView, id);
+      if (tvFeaturedMeta == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_featured_title;
+      TextView tvFeaturedTitle = ViewBindings.findChildViewById(rootView, id);
+      if (tvFeaturedTitle == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((CoordinatorLayout) rootView, activityMain, activityMakanan,
+          cardFeatured, chipBerdaging, chipBerkuah, chipPedas, chipSemua, etSearch, ivAvatar,
+          ivRecommendation, layoutEmptyResult, navFavorite, navHome, navMenu, navProfile,
+          scrollContent, tvFeaturedDesc, tvFeaturedMeta, tvFeaturedTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

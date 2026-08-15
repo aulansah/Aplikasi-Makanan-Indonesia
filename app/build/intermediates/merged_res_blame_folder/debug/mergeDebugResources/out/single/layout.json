@@ -4,15 +4,27 @@
         "source": "com.auldy.makananindonesia.app-main-48:/layout/activity_main.xml"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-mergeDebugResources-45:/layout/activity_about.xml",
-        "source": "com.auldy.makananindonesia.app-main-48:/layout/activity_about.xml"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-mergeDebugResources-45:\\layout\\activity_about.xml",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\layout\\activity_about.xml"
+    },
+    {
+        "merged": "com.auldy.makananindonesia.app-mergeDebugResources-45:/layout/activity_favorite.xml",
+        "source": "com.auldy.makananindonesia.app-main-48:/layout/activity_favorite.xml"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-mergeDebugResources-45:\\layout\\activity_detail.xml",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\layout\\activity_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-mergeDebugResources-45:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\layout\\activity_main.xml"
     },
     {
         "merged": "com.auldy.makananindonesia.app-mergeDebugResources-45:/layout/activity_detail.xml",
         "source": "com.auldy.makananindonesia.app-main-48:/layout/activity_detail.xml"
     },
     {
-        "merged": "com.auldy.makananindonesia.app-mergeDebugResources-45:/layout/item_row_makanan.xml",
-        "source": "com.auldy.makananindonesia.app-main-48:/layout/item_row_makanan.xml"
+        "merged": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-mergeDebugResources-45:\\layout\\item_row_makanan.xml",
+        "source": "C:\\Users\\aulan\\.gradle\\daemon\\8.13\\com.auldy.makananindonesia.app-main-48:\\layout\\item_row_makanan.xml"
     }
 ]

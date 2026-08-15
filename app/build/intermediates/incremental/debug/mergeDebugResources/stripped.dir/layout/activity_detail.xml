@@ -1,61 +1,371 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/nds_background"
     tools:context=".DetailActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="15dp">
-
+    <!-- Full-bleed food photo at top -->
     <ImageView
         android:id="@+id/makanan_photo"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="fitXY"
-        android:padding="6sp"/>
-
-        <TextView
-            android:id="@+id/makanan_nama"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="bottom|center"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
-            android:text="TextView"
-            android:textSize="32sp"
-            android:textStyle="bold" />
-
-        <TextView
-        android:id="@+id/makanan_detail"
-        android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="TextView"/>
+        android:scaleType="centerCrop"
+        tools:src="@drawable/rendang" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_marginTop="7dp"
-        android:layout_gravity="center">
-
-    <Button
+    <!-- Back button (top-left floating circle) -->
+    <FrameLayout
         android:id="@+id/btn_back"
-        android:text="DAFTAR MAKANAN INDONESIA"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="81dp"
-        tools:layout_editor_absoluteY="667dp" />
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/bg_circle_white"
+        android:elevation="4dp">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:src="@android:drawable/ic_menu_revert"
+            app:tint="@color/nds_on_surface" />
+
+    </FrameLayout>
+
+    <!-- Favorite button (top-right floating circle) -->
+    <FrameLayout
+        android:id="@+id/btn_favorite"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="top|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/bg_circle_white"
+        android:elevation="4dp">
+
+        <ImageView
+            android:id="@+id/btn_favorite_icon"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:src="@android:drawable/btn_star_big_off"
+            app:tint="@color/nds_primary" />
+
+    </FrameLayout>
+
+    <!-- Content bottom sheet panel -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="268dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bottom_sheet"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="120dp">
+
+            <!-- Title row with rating -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/makanan_nama"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/nds_on_surface"
+                    android:letterSpacing="-0.01"
+                    tools:text="Rendang Daging Sapi" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="★"
+                        android:textSize="14sp"
+                        android:textColor="@color/nds_star" />
+
+                    <TextView
+                        android:id="@+id/tv_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:text="4.9"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/nds_on_surface" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Origin subtitle -->
+            <TextView
+                android:id="@+id/tv_origin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="13sp"
+                android:textColor="@color/nds_on_surface_medium"
+                tools:text="Masakan Minangkabau · Sumatera Barat" />
+
+            <!-- Tags row (bound dynamically per food item) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_tag_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/nds_tag_text"
+                    android:background="@drawable/bg_tag"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="5dp"
+                    android:layout_marginEnd="8dp"
+                    tools:text="Berdaging" />
+
+                <TextView
+                    android:id="@+id/tv_tag_waktu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/nds_tag_text"
+                    android:background="@drawable/bg_tag"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="5dp"
+                    tools:text="40 menit" />
+
+            </LinearLayout>
+
+            <!-- Stats row: Kalori / Waktu / Ulasan -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:orientation="horizontal">
+
+                <!-- Kalori -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🔥"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="6dp">
+
+                        <TextView
+                            android:id="@+id/tv_kalori"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="320 kkal"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/nds_on_surface" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_kalori"
+                            android:textSize="11sp"
+                            android:textColor="@color/nds_on_surface_medium" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Waktu masak -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="⏱"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="6dp">
+
+                        <TextView
+                            android:id="@+id/tv_waktu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="40 menit"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/nds_on_surface" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_waktu"
+                            android:textSize="11sp"
+                            android:textColor="@color/nds_on_surface_medium" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Ulasan -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="👥"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="6dp">
+
+                        <TextView
+                            android:id="@+id/tv_ulasan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2.1k ulasan"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/nds_on_surface" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_ulasan"
+                            android:textSize="11sp"
+                            android:textColor="@color/nds_on_surface_medium" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="18dp"
+                android:background="#F0EBE5" />
+
+            <!-- Tentang Makanan Ini -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_tentang"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/nds_on_surface" />
+
+            <TextView
+                android:id="@+id/makanan_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="14sp"
+                android:textColor="@color/nds_on_surface_medium"
+                android:lineSpacingMultiplier="1.6"
+                tools:text="Rendang adalah masakan daging asli Indonesia dari Minangkabau…" />
 
         </LinearLayout>
 
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ── Bottom bar: harga + Simpan Resep ── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/nds_surface"
+        android:elevation="8dp"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_estimasi_harga"
+                android:textSize="11sp"
+                android:textColor="@color/nds_on_surface_medium" />
+
+            <TextView
+                android:id="@+id/tv_harga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Rp 28.000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/nds_on_surface" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_simpan_resep"
+            android:layout_width="160dp"
+            android:layout_height="48dp"
+            android:text="@string/btn_simpan_resep"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:background="@drawable/bg_btn_primary"
+            android:stateListAnimator="@null" />
+
     </LinearLayout>
 
-</ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
