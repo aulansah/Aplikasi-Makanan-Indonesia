@@ -1,16 +1,19 @@
 package com.auldy.makananindonesia
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.auldy.makananindonesia.data.model.Makanan
 import com.auldy.makananindonesia.databinding.ItemRowMakananBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
-class ListMakananAdapter(val listMakanan: ArrayList<Makanan>) :
-    RecyclerView.Adapter<ListMakananAdapter.ListViewHolder>() {
+class ListMakananAdapter(
+    private var listMakanan: List<Makanan> = emptyList()
+) : RecyclerView.Adapter<ListMakananAdapter.ListViewHolder>() {
 
-    private lateinit var onItemClickCallback: OnItemClickCallback
+    private var onItemClickCallback: OnItemClickCallback? = null
 
     inner class ListViewHolder(val binding: ItemRowMakananBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -31,11 +34,20 @@ class ListMakananAdapter(val listMakanan: ArrayList<Makanan>) :
         holder.binding.tvItemName.text = makan.nama
         holder.binding.tvItemDetail.text = makan.detail
         holder.itemView.setOnClickListener {
-            onItemClickCallback.onItemClicked(listMakanan[holder.adapterPosition])
+            val currentPos = holder.bindingAdapterPosition
+            if (currentPos != RecyclerView.NO_POSITION) {
+                onItemClickCallback?.onItemClicked(listMakanan[currentPos])
+            }
         }
     }
 
     override fun getItemCount(): Int = listMakanan.size
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun setData(newList: List<Makanan>) {
+        this.listMakanan = newList
+        notifyDataSetChanged()
+    }
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback

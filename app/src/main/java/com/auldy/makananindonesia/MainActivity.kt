@@ -1,40 +1,76 @@
 package com.auldy.makananindonesia
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.auldy.makananindonesia.data.model.Makanan
 import com.auldy.makananindonesia.databinding.ActivityMainBinding
+import com.auldy.makananindonesia.ui.common.UiState
+import com.auldy.makananindonesia.ui.common.ViewModelFactory
+import com.auldy.makananindonesia.ui.main.MainViewModel
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityMainBinding
-    private var list: ArrayList<Makanan> = arrayListOf()
+    private lateinit var listMakananAdapter: ListMakananAdapter
+
+    private val viewModel: MainViewModel by viewModels {
+        ViewModelFactory.getInstance(applicationContext)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.activityMakanan.setHasFixedSize(true)
-
-        list.addAll(MakananData.listData)
-        showRecyclerList()
-
         supportActionBar?.title = "Makanan Indonesia"
+
+        setupRecyclerView()
+        observeViewModel()
     }
 
-    private fun showRecyclerList() {
-        binding.activityMakanan.layoutManager = LinearLayoutManager(this)
-        val listMakananAdapter = ListMakananAdapter(list)
-        binding.activityMakanan.adapter = listMakananAdapter
+    private fun setupRecyclerView() {
+        listMakananAdapter = ListMakananAdapter()
+        binding.activityMakanan.apply {
+            setHasFixedSize(true)
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            adapter = listMakananAdapter
+        }
 
         listMakananAdapter.setOnItemClickCallback(object : ListMakananAdapter.OnItemClickCallback {
             override fun onItemClicked(data: Makanan) {
-                showSelectedHero(data)
+                showSelectedMakanan(data)
             }
         })
+    }
+
+    private fun observeViewModel() {
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.uiState.collect { state ->
+                    when (state) {
+                        is UiState.Loading -> {
+                            // Loading state
+                        }
+                        is UiState.Success -> {
+                            listMakananAdapter.setData(state.data)
+                        }
+                        is UiState.Error -> {
+                            Toast.makeText(this@MainActivity, state.message, Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -50,18 +86,19 @@ class MainActivity : AppCompatActivity() {
     private fun setMode(selectedMode: Int) {
         when (selectedMode) {
             R.id.action_about -> {
-                val moveabout = Intent(this@MainActivity, AboutActivity::class.java)
-                startActivity(moveabout)
+                val moveAbout = Intent(this@MainActivity, AboutActivity::class.java)
+                startActivity(moveAbout)
             }
         }
     }
 
-    private fun showSelectedHero(makan: Makanan) {
-        startActivity(
-                Intent(applicationContext, DetailActivity::class.java)
-                        .putExtra("nama", makan.nama)
-                        .putExtra("photo", makan.photo)
-                        .putExtra("detail", makan.detail)
-        )
+    private fun showSelectedMakanan(makan: Makanan) {
+        val intent = Intent(this, DetailActivity::class.java).apply {
+            putExtra(DetailActivity.EXTRA_ID, makan.id)
+            putExtra(DetailActivity.EXTRA_NAMA, makan.nama)
+            putExtra(DetailActivity.EXTRA_PHOTO, makan.photo)
+            putExtra(DetailActivity.EXTRA_DETAIL, makan.detail)
+        }
+        startActivity(intent)
     }
 }

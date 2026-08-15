@@ -1,11 +1,70 @@
 # Aplikasi Makanan Indonesia
 
-Aplikasi Android sederhana yang menampilkan katalog 10 makanan khas Indonesia (Bakso, Gudeg, Rendang, dll) lengkap dengan foto dan deskripsi. Dibuat dengan Kotlin, tanpa backend/API — semua data tersimpan langsung di dalam kode (`MakananData.kt`).
+Aplikasi Android katalog 10 makanan khas Indonesia (Bakso, Gudeg, Rendang, dll) lengkap dengan foto dan deskripsi. Dibangun menggunakan Kotlin dengan arsitektur **MVVM (Model-View-ViewModel)**, **Repository Pattern**, dan **Room Database (Android Jetpack)**.
 
-Fitur:
-- `MainActivity` — daftar makanan (RecyclerView)
-- `DetailActivity` — detail satu makanan saat item di-tap
-- `AboutActivity` — halaman profil developer
+---
+
+## 🏛️ Arsitektur Aplikasi (MVVM + Repository + Room)
+
+Aplikasi ini menggunakan pola arsitektur **Modern Android Development (MAD)** yang bersih, reaktif, dan modular:
+
+```
+Activity / UI Layer (MainActivity, DetailActivity, AboutActivity)
+       │
+       ▼  (Mengamati StateFlow / UiState)
+ViewModel Layer (MainViewModel, DetailViewModel)
+       │
+       ▼  (Memanggil Suspend Function / Coroutines)
+Repository Layer (MakananRepository -> MakananRepositoryImpl)
+       │
+       ▼  (Single Source of Truth / Flow)
+Local Database (Room Database -> MakananDao -> MakananEntity)
+```
+
+### 📂 Struktur Direktori Proyek
+
+```
+com.auldy.makananindonesia/
+├── data/
+│   ├── local/
+│   │   ├── entity/
+│   │   │   └── MakananEntity.kt       # Entity tabel database Room
+│   │   ├── room/
+│   │   │   ├── MakananDao.kt          # DAO operasi query Flow & suspend
+│   │   │   └── MakananDatabase.kt     # Singleton Room Database + Callback Pre-populate
+│   │   └── MakananData.kt             # Data seed 10 makanan khas Indonesia
+│   ├── model/
+│   │   └── Makanan.kt                 # Domain model murni
+│   └── repository/
+│       ├── MakananRepository.kt       # Interface Repository
+│       └── MakananRepositoryImpl.kt   # Implementasi Repository (SSOT)
+├── di/
+│   └── Injection.kt                   # Service locator / dependency injection
+├── ui/
+│   ├── common/
+│   │   ├── UiState.kt                 # Sealed interface: Loading, Success, Error
+│   │   └── ViewModelFactory.kt        # Factory untuk instansiasi ViewModel
+│   ├── main/
+│   │   └── MainViewModel.kt           # ViewModel katalog makanan (StateFlow)
+│   └── detail/
+│       └── DetailViewModel.kt         # ViewModel detail makanan
+├── MainActivity.kt                    # ViewBinding + StateFlow collector via repeatOnLifecycle
+├── DetailActivity.kt                  # ViewBinding + DetailViewModel
+├── AboutActivity.kt                   # Profile Activity
+└── ListMakananAdapter.kt              # RecyclerView Adapter dengan bindingAdapterPosition
+```
+
+---
+
+## 💾 Kenapa Memilih Room Database (Opsi 1)?
+
+Untuk arsitektur database, aplikasi ini menggunakan **Room Database (Android Jetpack)**:
+
+1. **100% Offline-First & Cepat:** Data tersimpan lokal di perangkat pengguna dalam format SQLite, dapat diakses instan tanpa bergantung pada koneksi internet.
+2. **Zero-Configuration:** Siapapun yang meng-clone atau membuka proyek ini dapat langsung melakukan build dan run tanpa memerlukan akun Firebase, API key, atau file `google-services.json`.
+3. **Pre-population Otomatis:** Saat aplikasi pertama kali di-install dan database dibuat, Room callback secara otomatis menyemai (seed) 10 data makanan awal ke dalam SQLite.
+4. **Reaktif dengan Kotlin Flow:** Setiap perubahan pada tabel Room otomatis dipancarkan melalui `Flow` hingga ke UI secara realtime.
+5. **Siap Diperluas (Extensible):** Dengan adanya `MakananRepository`, di masa depan aplikasi dapat dengan mudah menambahkan sinkronisasi Cloud (Firebase / REST API) sebagai Remote DataSource tanpa mengubah kode ViewModel maupun Activity.
 
 ---
 
@@ -15,13 +74,17 @@ Proyek ini awalnya dibuat tahun **2021** dan sudah di-upgrade penuh per **Agustu
 
 | Komponen | 2021 (lama) | 2026 (sekarang) |
 |---|---|---|
-| Kotlin | 1.3.72 | 2.3.20 |
-| Android Gradle Plugin (AGP) | 4.1.2 | 8.13.0 |
-| Gradle | 6.5 | 8.13 |
-| compileSdk / targetSdk | 30 (Android 11) | 36 (Android 15/16) |
-| minSdk | 21 (Android 5.0) | 23 (Android 6.0) |
+| Arsitektur | Monolitik (Direct List) | **MVVM + Repository + Room Database** |
+| Database | Data statis di memori | **Room Database (SQLite) + KSP** |
+| State Management | Manual UI update | **Kotlin Coroutines + StateFlow** |
+| Kotlin | 1.3.72 | **2.0.21** |
+| Kotlin Symbol Processing (KSP) | - | **2.0.21-1.0.28** |
+| Android Gradle Plugin (AGP) | 4.1.2 | **8.13.0** |
+| Gradle | 6.5 | **8.13** |
+| compileSdk / targetSdk | 30 (Android 11) | **36 (Android 15/16)** |
+| minSdk | 21 (Android 5.0) | **23 (Android 6.0)** |
 | Repository dependency | `jcenter()` ❌ *(sudah tutup)* | `google()` + `mavenCentral()` |
-| Java target | 1.8 | 17 |
+| Java target | 1.8 | **17** |
 
 ---
 
@@ -33,66 +96,45 @@ Kalau proyek versi 2021 dibuka apa adanya di Android Studio versi sekarang, buil
 2. **AGP 4.1.2 & Gradle 6.5 tidak kompatibel dengan JDK modern** (JDK 17/21 yang dipakai Android Studio versi baru). Kombinasi versi lama ini juga sudah tidak didukung oleh Android Studio terbaru sama sekali.
 3. **targetSdk 30 di bawah syarat minimum Google Play.** Untuk publish/update aplikasi ke Play Store, Google mewajibkan targetSdk mengikuti versi Android terbaru (setiap tahun naik).
 
-Karena tiga hal ini, "mungkin bisa jalan" itu benar — **kemungkinan besar tidak akan bisa** kalau dipaksa jalan tanpa upgrade.
-
 ---
 
 ## ✅ Apa yang Sudah Diupgrade
 
-### 1. Build System (paling krusial)
-- **`build.gradle` (root):** dependency `jcenter()` dihapus total, format plugin diubah ke gaya deklaratif modern (`plugins { ... }` dengan versi eksplisit).
-- **`settings.gradle`:** repository (`google()`, `mavenCentral()`) sekarang dipusatkan di sini lewat `dependencyResolutionManagement`, bukan lagi di `allprojects` pada root `build.gradle` (pola lama sudah deprecated sejak AGP 7).
+### 1. Build System & Tooling
+- **`build.gradle` (root):** dependency `jcenter()` dihapus total, plugin `org.jetbrains.kotlin.android` (2.0.21) dan `com.google.devtools.ksp` (2.0.21-1.0.28) ditambahkan.
+- **`settings.gradle`:** repository (`google()`, `mavenCentral()`) dipusatkan di sini lewat `dependencyResolutionManagement`.
 - **`gradle-wrapper.properties`:** Gradle dinaikkan dari 6.5 → **8.13**.
-- **`gradle.properties`:** ditambah `android.nonTransitiveRClass=true` (best practice modern, build lebih cepat & aman dari bentrok R class), `org.gradle.parallel`, dan `org.gradle.caching`. `enableJetifier` dihapus karena sudah tidak relevan (tidak ada lagi dependency Support Library lama).
+- **`gradle.properties`:** ditambah `android.nonTransitiveRClass=true`, `org.gradle.parallel`, dan `org.gradle.caching`.
 
 ### 2. `app/build.gradle`
-- AGP-related config disesuaikan ke gaya AGP 8.x: `namespace` sekarang dideklarasikan di sini (bukan lagi lewat atribut `package` di `AndroidManifest.xml` — ini **wajib** sejak AGP 8, kalau tidak, build gagal).
-- `compileSdk`/`targetSdk`: 30 → **36**.
-- `minSdk`: 21 → **23** (Android 6.0 ke atas, ±99% device aktif saat ini masih tercakup; beberapa library AndroidX terbaru sudah mensyaratkan minimum ini).
-- `sourceCompatibility`/`jvmTarget`: Java 8 → **Java 17**.
-- Menambahkan `buildFeatures { viewBinding true }` untuk mendukung modernisasi kode (lihat bagian di bawah).
-- Dependency duplikat (`material` ditulis dua kali dengan versi berbeda) dihapus, `mediarouter` (tidak dipakai sama sekali di kode) dihapus, dan `com.mikhaellopez:circularimageview:3.2.0` (hanya ada di JCenter) dihapus lalu distandarkan ke `de.hdodenhof:circleimageview:3.1.0` yang resmi tersedia di Maven Central.
-- Semua versi library dinaikkan ke rilis stabil terbaru: Kotlin stdlib, `core-ktx`, `appcompat`, `material`, `constraintlayout`, `recyclerview`, Glide (4.11 → **5.0.7**), JUnit, Espresso.
+- `namespace 'com.auldy.makananindonesia'`, `compileSdk 36`, `targetSdk 36`, `minSdk 23`, `Java 17`.
+- `buildFeatures { viewBinding true }`.
+- Menambahkan dependensi Android Jetpack:
+  - **Room Database:** `room-runtime:2.6.1`, `room-ktx:2.6.1`, `ksp 'androidx.room:room-compiler:2.6.1'`.
+  - **Lifecycle & ViewModel:** `lifecycle-viewmodel-ktx:2.8.7`, `lifecycle-runtime-ktx:2.8.7`, `lifecycle-livedata-ktx:2.8.7`, `activity-ktx:1.10.1`.
+  - **Coroutines:** `kotlinx-coroutines-android:1.10.1`.
+- Standardisasi circular image view ke `de.hdodenhof:circleimageview:3.1.0` (Maven Central).
+- Glide di-update ke versi stabil `5.0.7`.
 
 ### 3. `AndroidManifest.xml`
-- Atribut `package="..."` dihapus (dipindah jadi `namespace` di Gradle, sesuai aturan AGP 8+).
-- Menambahkan `android:exported="true"/"false"` secara eksplisit di setiap `<activity>`. **Ini wajib** sejak targetSdk 31 ke atas — tanpa ini, aplikasi akan **crash saat instalasi**, bukan sekadar warning.
-
-### 4. Modernisasi Kode Kotlin & Layout
-- **`findViewById` manual → ViewBinding.** Semua Activity dan Adapter sekarang pakai `ActivityMainBinding`, `ActivityDetailBinding`, `ActivityAboutBinding`, `ItemRowMakananBinding` yang di-generate otomatis oleh Gradle. Keuntungan: lebih aman dari `NullPointerException` dan error tipe view yang salah (dulu semua itu baru ketahuan saat app di-run, sekarang ketahuan saat compile).
-- **Standardisasi Circular Image View:** Komponen `com.mikhaellopez.circularimageview.CircularImageView` di `activity_about.xml` diganti menjadi `de.hdodenhof.circleimageview.CircleImageView` agar seragam dengan list item dan terbebas dari dependensi JCenter yang sudah mati.
-- **`AboutActivity`:** override `onKeyDown(KEYCODE_BACK)` dihapus. Kode ini sebenarnya sejak awal tidak melakukan apa-apa yang berbeda dari perilaku default Android (tombol back sistem sudah otomatis `finish()` activity), dan pola ini sudah lama digantikan `OnBackPressedCallback` di Android modern.
-- **`DetailActivity`:** ekstra Intent yang nullable (`getStringExtra`) dulu di-`.toString()` (berisiko menampilkan teks literal `"null"` kalau datanya kosong), sekarang pakai `.orEmpty()` yang lebih aman.
-- Import yang tidak terpakai (`org.w3c.dom.Text`, sisa copy-paste) dibersihkan.
-
-### 5. File Proyek Lain
-- Folder `app/build/`, `.gradle/`, `.idea/`, dan `local.properties` lama dihapus dari paket ini — semua ini adalah file cache/konfigurasi mesin lokal lama yang akan otomatis dibuat ulang oleh Android Studio saat proyek pertama kali dibuka, dan kalau dibiarkan justru berpotensi bikin konflik dengan environment baru.
+- Atribut `package="..."` dihapus (dipindah jadi `namespace` di Gradle).
+- Menambahkan `android:exported="true"/"false"` secara eksplisit di setiap `<activity>`.
 
 ---
 
-## 🔧 Cara Menjalankan Sekarang
+## 🔧 Cara Menjalankan
 
 1. Buka proyek ini di **Android Studio versi terbaru** (2025.x ke atas).
-2. Biarkan Android Studio melakukan **Gradle Sync** otomatis (akan otomatis download Gradle 8.13 & AGP 8.13 sesuai konfigurasi).
-3. Jalankan di emulator/device dengan **Android 6.0 (API 23) ke atas**.
-
-Tidak perlu setup tambahan — tidak ada API key, tidak ada backend, semua data sudah include di dalam kode.
-
----
-
-## 💡 Kenapa Kotlin/Android Butuh Upgrade Berkala?
-
-Ini contoh nyata kenapa proyek Android tidak bisa "didiamkan" terlalu lama:
-- **Repository dependency bisa mati** (kasus JCenter) — proyek yang bergantung padanya otomatis tidak bisa di-build lagi, walau kodenya sendiri tidak salah apa-apa.
-- **Google Play punya syarat targetSdk minimum yang naik tiap tahun** — app lama otomatis tidak bisa di-update/publish kalau tidak mengikuti.
-- **AGP & Gradle rilis versi major (breaking changes) tiap 1–2 tahun** — banyak konfigurasi lama (seperti `package` di manifest, `allprojects` repositories) dihapus dukungannya seiring waktu.
-- **Library pihak ketiga terus rilis versi baru** untuk perbaikan keamanan dan bug — versi lama makin lama makin berisiko dan makin sulit dicari dokumentasinya.
-
-Untuk proyek sekecil ini, effort upgrade relatif ringan (tidak ada arsitektur kompleks, database, atau network layer). Untuk proyek yang jauh lebih besar, disarankan melakukan upgrade bertahap tiap 6–12 bulan agar jaraknya tidak sejauh ini (2021 → 2026 = 5 tahun loncatan).
+2. Pastikan Gradle JDK di Android Studio diset ke **JDK 17**:
+   - Buka menu: `File` → `Settings` → `Build, Execution, Deployment` → `Build Tools` → `Gradle`.
+   - Pada dropdown **Gradle JDK**, pilih **`17` / `Oracle OpenJDK 17`** (misal di `C:\Program Files\Java\jdk-17`).
+3. Lakukan **Gradle Sync** (ikon gajah di toolbar atas).
+4. Jalankan aplikasi di emulator atau device fisik (**Android 6.0 / API 23 ke atas**).
 
 ---
 
 ## 🚀 Ide Pengembangan Selanjutnya (opsional)
 - Migrasi UI dari XML layout ke **Jetpack Compose**.
-- Ganti `de.hdodenhof.circleimageview` dengan transformasi `CircleCrop` bawaan Glide atau `ShapeableImageView` dari Material Components, atau `Modifier.clip(CircleShape)` jika sudah menggunakan Compose.
-- Pindahkan data makanan yang hardcoded ke Room database atau file JSON/API, supaya lebih mudah ditambah tanpa perlu rebuild aplikasi.
+- Menambahkan fitur UI tombol Favorite/Bookmark di `DetailActivity` yang langsung meng-update `isFavorite` di Room Database.
+- Fitur pencarian makanan (Search Bar) di `MainActivity` memanfaatkan `makananDao.searchMakanan(query)`.
+- Menambahkan remote data source (Firebase / REST API) ke dalam `MakananRepository` untuk sinkronisasi cloud.

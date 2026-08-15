@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.auldy.makananindonesia.app-mergeDebugResources-34:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.auldy.makananindonesia.app-mergeDebugResources-44:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\aulan\\.gradle\\caches\\8.13\\transforms\\3a8726276bf63eaf971d3d9179bc5ae5\\transformed\\appcompat-1.7.1\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "C:\\Users\\aulan\\.gradle\\caches\\8.13\\transforms\\247df4894f128ccbb58944636baaf8e6\\transformed\\appcompat-1.7.1\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",

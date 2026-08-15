@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.auldy.makananindonesia.app-mergeDebugResources-34:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.auldy.makananindonesia.app-mergeDebugResources-44:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "C:\\Users\\aulan\\Downloads\\Aplikasi-Makanan-Indonesia-main\\Aplikasi-Makanan-Indonesia-main\\app\\src\\main\\res\\values-night\\themes.xml",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\aulan\\.gradle\\caches\\8.13\\transforms\\717e13f14821d40cba2dd27921a875db\\transformed\\material-1.12.0\\res\\values-night-v8\\values-night-v8.xml",
+                    "source": "C:\\Users\\aulan\\.gradle\\caches\\8.13\\transforms\\d3a1a973c5ce402d27576cd75a2feddf\\transformed\\material-1.12.0\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -40,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\aulan\\.gradle\\caches\\8.13\\transforms\\3a8726276bf63eaf971d3d9179bc5ae5\\transformed\\appcompat-1.7.1\\res\\values-night-v8\\values-night-v8.xml",
+                    "source": "C:\\Users\\aulan\\.gradle\\caches\\8.13\\transforms\\247df4894f128ccbb58944636baaf8e6\\transformed\\appcompat-1.7.1\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
